@@ -15,6 +15,14 @@ CREATE TABLE RBF (
                      fee DOUBLE
 );
 
+
+
+CREATE TABLE WPEF (
+                      id      INT PRIMARY KEY AUTO_INCREMENT,
+                      container    VARCHAR(255),
+                      fee     DOUBLE
+);
+
 CREATE TABLE ATEF (
                       id      INT PRIMARY KEY AUTO_INCREMENT,
                       borders    VARCHAR(255),
@@ -24,11 +32,5 @@ CREATE TABLE ATEF (
 CREATE TABLE WSEF (
                       id      INT PRIMARY KEY AUTO_INCREMENT,
                       borders    VARCHAR(255),
-                      fee     DOUBLE
-);
-
-CREATE TABLE WPEF (
-                      id      INT PRIMARY KEY AUTO_INCREMENT,
-                      container    VARCHAR(255),
                       fee     DOUBLE
 );

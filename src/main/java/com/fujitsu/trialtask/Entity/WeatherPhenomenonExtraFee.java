@@ -1,4 +1,4 @@
-package com.fujitsu.trialtask.Entities;
+package com.fujitsu.trialtask.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,19 +7,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "Wpef")
 @Data
-@Table(name = "WPEF")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Wpef {
+public class WeatherPhenomenonExtraFee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
-    public String container;
     public double fee;
-    public Wpef(String container, double fee) {
-        this.container = container;
+    public String containing;
+
+
+    public WeatherPhenomenonExtraFee(String containing, double fee) {
+        this.containing = containing;
         this.fee = fee;
     }
 }

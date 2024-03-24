@@ -1,15 +1,12 @@
-package com.fujitsu.trialtask.Entities;
+package com.fujitsu.trialtask.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Weather")
@@ -17,24 +14,23 @@ import java.security.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class Weather {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     public String station;
-    public String WMO;
     public Double air;
     public Double wind;
     public String weather;
-    public Timestamp observationTime;
-    public Weather(String station, String WMO, Double air, Double wind, String weather, Timestamp observationTime) {
+    public String WMO;
+    public Timestamp observation;
+
+    public Weather(String station, String WMO, Double air, Double wind, String weather, Timestamp observation) {
         this.station = station;
         this.WMO = WMO;
         this.air = air;
         this.wind = wind;
         this.weather = weather;
-        this.observationTime = observationTime;
+        this.observation = observation;
     }
-
 }

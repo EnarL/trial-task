@@ -1,22 +1,22 @@
-package com.fujitsu.trialtask.Entities;
+package com.fujitsu.trialtask.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "WSEF")
+@Table(name = "Wsef")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Wsef {
+public class WindSpeedExtraFee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     public String borders;
     public double fee;
-    public Wsef(String borders, double fee) {
+
+    public WindSpeedExtraFee(String borders, double fee) {
         this.borders = borders;
         this.fee = fee;
     }
-
 }

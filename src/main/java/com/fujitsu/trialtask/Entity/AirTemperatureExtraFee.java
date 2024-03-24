@@ -1,4 +1,4 @@
-package com.fujitsu.trialtask.Entities;
+package com.fujitsu.trialtask.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,19 +6,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
-@Table(name = "ATEF")
+@Table(name = "Atef")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Atef {
+public class AirTemperatureExtraFee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     public String borders;
     public double fee;
-    public Atef(String borders, double fee) {
+
+    public AirTemperatureExtraFee(String borders, double fee) {
         this.borders = borders;
         this.fee = fee;
     }

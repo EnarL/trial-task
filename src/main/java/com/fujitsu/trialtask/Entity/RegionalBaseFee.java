@@ -1,17 +1,17 @@
-package com.fujitsu.trialtask.Entities;
+package com.fujitsu.trialtask.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
-@Table(name = "RBF")
+@Table(name = "Rbf")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Rbf {
-    @Getter
-    @Setter
+public class RegionalBaseFee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
@@ -19,12 +19,11 @@ public class Rbf {
     public String vehicle;
     public double fee;
 
-    public Rbf(String city, String vehicle, double fee) {
+    public RegionalBaseFee(String city, String vehicle, double fee) {
         this.city = city;
         this.vehicle = vehicle;
         this.fee = fee;
     }
-
 
 
 }
